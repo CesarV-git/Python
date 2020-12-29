@@ -14,6 +14,7 @@ def get_number(value):
     i += 1
 
 def clear_screen():
+    text.configure(state="normal")
     text.delete(0, END)
     global i
     i = 0
@@ -29,6 +30,7 @@ def calculate():
         text.insert(0, "Error")
         global i
         i = 0
+        text.configure(state="disabled")
 
 def delete_last():
     state = text.get()
