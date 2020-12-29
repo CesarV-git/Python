@@ -6,23 +6,26 @@ window.title("Simple Calculator")
 text = Entry(window, font=("Calibri 22"))
 text.grid(row=0, column=0, columnspan=5, pady=10, padx=20)
 i = 0
-#functions
+# functions
+
 def get_number(value):
     global i
     text.insert(i, value)
     i += 1
+
 def clear_screen():
     text.delete(0, END)
     global i
     i = 0
+
 def calculate():
     try:
         operation = text.get()
         result = eval(operation)
-        text.delete(0,END)
+        text.delete(0, END)
         text.insert(0, result)
     except:
-        text.delete(0,END)
+        text.delete(0, END)
         text.insert(0, "Error")
         global i
         i = 0
